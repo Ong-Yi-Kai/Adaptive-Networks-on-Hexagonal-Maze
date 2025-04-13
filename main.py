@@ -11,8 +11,8 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((width, height))
     pygame.display.set_caption("Adaptive Network on Hexagonal Lattice")
 
-    L = Lattice(15, 15)  
-    network = Network(L, sources=[(0, 0)], sinks=[(0, 9)])
+    L = Lattice(15,15)  
+    network = Network(L, sources=[(0, 0)], sinks=[(14, 14)])
 
     paused = False
     running = True

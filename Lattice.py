@@ -52,6 +52,17 @@ class Lattice:
                 stack.append((ni, nj))
             else:
                 stack.pop()
+
+        # randomly add some connections to the maze for multi-paths
+        for _ in range(10):
+            i = np.random.randint(self.N)
+            j = np.random.randint(self.M)
+            k = np.random.randint(6)
+            ni, nj = self.get_neighbor(i, j, k)
+            if ni is not None and nj is not None:
+                edges[i, j, k] = 1
+                edges[ni, nj, (k + 3) % 6] = 1
+
         self.edge_weight = edges.copy()
         self.edges = edges.copy()
 

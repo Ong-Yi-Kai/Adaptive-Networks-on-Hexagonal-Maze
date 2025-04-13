@@ -8,7 +8,7 @@ import pygame
 class Network:
 
     dt = 0.01
-    r = 0.1
+    r = 1
     mu = 1
     I_0 = 100
     def f(Q): return Q**Network.mu/(1+np.abs(Q)**Network.mu)
